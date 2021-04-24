@@ -1,0 +1,245 @@
+#app {
+	font-size: 14px;
+}
+
+#bigTable {
+	width: 90%;
+	margin: 0 auto;
+	/* border: 1px solid #f1f1f1; */
+	margin-top: 20px;
+}
+
+#bigTable thead,
+#bigTable tr {
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #f1f1f1;
+}
+
+#bigTable {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #f1f1f1;
+}
+
+#bigTable td,
+#bigTable th {
+	max-width: 200px;
+	word-break: break-word;
+	padding: 0px 2px;
+	font-size: 15px;
+	font-family: microsoft yahei;
+	color: #222222;
+	text-align: center;
+	height: 40px;
+	border: 1px solid;
+}
+td > textarea {
+	resize: none;
+}
+
+.table-handle {
+	color: #095280;
+	cursor: pointer;
+	padding: 5px;
+}
+
+.table-handle:hover {
+	text-decoration: underline;
+}
+
+/* 搜索 */
+.search {
+	/* width: 100vw; */
+	background-color: #f2f2f2;
+	border-bottom: 1px solid #d6d6d6;
+	padding: 20px;
+	padding-left: 5%;
+}
+
+.search-icon {
+	background-color: #095280;
+	max-width: 90px;
+	min-width: 60px;
+	height: 40px;
+	background-image: url('../images/search.png');
+	background-size: 30px;
+	background-position: center;
+	cursor: pointer;
+}
+
+.search-icon:hover {
+	opacity: 0.8;
+}
+
+.search-input {
+	min-width: 150px;
+	height: 38px;
+	padding-left: 10px;
+	border: none;
+	border: #095280 1px solid;
+}
+
+.add-btn {
+	height: 40px;
+	width: 120px;
+	background-color: #1862c6;
+	border: none;
+	color: white;
+	margin-left: 10px;
+	cursor: pointer;
+	border-radius: 3px;
+	font-size: 14px;;
+	/* background-color: ; */
+}
+.cancel-btn {
+	height: 40px;
+	width: 120px;
+	background-color: #767171;
+	border: none;
+	color: white;
+	margin-left: 10px;
+	cursor: pointer;
+	border-radius: 3px;
+	font-size: 14px;;
+	/* background-color: ; */
+}
+
+.add-project:hover {
+	opacity: 0.8;
+}
+
+.table-warnning {
+	/* text-align: left !important; */
+	color: #857548;
+	font-weight: bold;
+	padding-left: 10px;
+}
+
+/*弹框中的table**/
+.tableDatil thead,
+.tableDatil tr {
+	border: 1px solid #AFABAB;
+	height: 30px;
+}
+
+.tableDatil {
+	margin: 10px auto;
+	width: 97%;
+	text-align: center;
+	border: 1px solid #AFABAB;
+}
+
+.tableDatil caption {
+	font-size: 20px;
+	color: #333333;
+	padding: 10px;
+}
+
+.tableDatil td{
+	max-width: 500px;
+	word-wrap: break-word;
+	padding: 1px 5px;
+	font-size: 14px;
+	font-family: "microsoft yahei";
+	color: #333333;
+	height: 25px;
+	/* text-align: left; */
+	border: 1px solid #AFABAB;
+}
+.tableDatil th {
+	max-width: 500px;
+	word-wrap: break-word;
+	/* padding: 5px 10px; */
+	font-size: 14px;
+	font-family: "microsoft yahei";
+	color:#004085;
+	height: 30px;
+	text-align: left;
+	border: 1px solid #AFABAB;
+	background-color: #f9fbfd;
+}
+
+.smallTable-handle {
+	text-decoration: underline;
+	cursor: pointer;
+	margin-right: 10px;
+	color:#3D83E5;
+}
+
+.input-item {
+	line-height: 32px;
+}
+
+.item_name {
+  width: 10%;
+  font-size: 14px;
+  color: #004085;
+}
+
+.item_text {
+	width: 200px;
+	height: 32px;
+	border: 1px solid #AFABAB;
+	border-radius: 4px;
+	padding-left: 10px;
+	margin-bottom: 20px;
+}
+
+.btn {
+	width: 60px;
+	height: 25px;
+	cursor: pointer;
+	/* margin-left: 32px; */
+}
+
+.add-row {
+	background-color: #095280;
+	color: white;
+	border: 1px solid #095280;
+}
+
+.delete-row {
+	background-color: white;
+	color: #095280;
+	border: 1px solid #095280;
+}
+
+.add-row:hover {
+	opacity: 0.8;
+}
+
+.golast {
+	cursor: pointer;
+	color: #095280;
+	text-decoration: underline;
+	font-size: 20px;
+	padding-left: 5%;
+}
+
+.logsDetail {
+	padding-left: 5%;
+	font-size: 16px;
+	font-weight: bold;
+	margin-top: 15px;
+}
+
+.smallTable-input {
+	text-align: center;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.smallTable-input:disabled {
+	background-color: #fff;
+	color: #333333;
+	border: none;
+}
+.border_all {
+	border: 1px solid #F1F1F1;
+	border-radius: 4px;
+}
+.table-handle-box {
+	max-width: 200px;
+}
