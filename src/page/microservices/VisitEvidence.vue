@@ -7,10 +7,11 @@
           v-model="selectValue"
           :selectname="selectOption[0].name"
         ></SingleSelect></div>
+		<!--
         <div class="AcGroup" style="margin-left: 7%;">访问组：
           <SingleSelect @serachbykeyword="getMerchants" 
           :selectname="serachDefalt.name" :items="merchantitems" v-model="searchMachant"></SingleSelect>
-        </div>
+        </div>-->
         
         <div class="input_box">关键字：<input type="text" v-model="keyword" @keydown.enter="query"></div>
         <div class="query_button" @click="query">查询</div>
@@ -54,6 +55,7 @@
           <label class="kind_item"><span>种类(access kind)：</span> </label>
           <WoolSelect :items="cSelectOption" v-model="createOptionVal" class="kindselect">{{ cSelectOption[createOptionVal].name }}</WoolSelect>
         </div>
+	<!--
     <div class="visit_groups">
       <label class="visit_group"><span>访问组(access group)：</span> </label>
       <SingleSelect
@@ -62,7 +64,7 @@
         :items="merchantitems"
         v-model="createMerchant.id"
       ></SingleSelect>
-    </div>
+    </div>-->
         <div class="zhuaiyao_items">
           <label class="zhuaiyao_item"><span>摘要：</span> </label>
           <textarea v-model="summary" class="summary-input zhaiyao" rows="5" style="width:550px" placeholder="请输入凭证摘要"></textarea>
