@@ -114,7 +114,7 @@ export default{
       }
     },
     goToRlog(){
-      window.open('/devops/examplelog?app_log=gateway_'+this.id)
+      window.open('/devops/examplelog?app_log=weforward-gateway_'+this.id)
     },
     clickTime(op){
       if( this.id){
