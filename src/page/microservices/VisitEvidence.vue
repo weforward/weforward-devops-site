@@ -173,7 +173,7 @@ export default {
             msgView.msgsucc('创建成功').hide();
             this.showcreate = !this.showcreate;
             this.showaccesskey = true;
-            this.accesskey = data.key;
+            this.accesskey = data.key_base64;
             this.accessId = data.id;
             this.requestList();
           }
@@ -219,7 +219,7 @@ export default {
     seeAccesskey(item) {
       this.showaccesskey = true;
       this.accessId = item.id;
-      this.accesskey = item.key;
+      this.accesskey = item.key_base64;
     },
     searchMerchants(companyid, iscontinue) {
       let params = {
