@@ -383,11 +383,11 @@ export default{
         handleData(GC)
       }else if(op=='RPC_pl'){
         var myChart4=echarts.init(document.getElementById('RPC_pl'))
-        let RPC_pl= await this.$wf.post("devops?method=/devops/metrics/ms_rpc_request_count_range",parame)
+        let RPC_pl= await this.$wf.post("devops?method=/devops/metrics/gw_ms_rpc_request_count_range",parame)
         handleData(RPC_pl)
       }else if(op=='RPC_error_num'){
         var myChart5=echarts.init(document.getElementById('RPC_error_num'))
-        let RPC_error_num= await this.$wf.post("devops?method=/devops/metrics/ms_rpc_request_count_error_range",parame)
+        let RPC_error_num= await this.$wf.post("devops?method=/devops/metrics/gw_ms_rpc_request_count_error_range",parame)
         handleData(RPC_error_num)
       }else if(op=='spend_time'){
         var myChart6=echarts.init(document.getElementById('spend_time'))
@@ -399,7 +399,7 @@ export default{
         handleData(spendtime_max)
       }else if(op=='RPC_num'){
         var myChart8=echarts.init(document.getElementById('RPC_num'))
-        let RPC_num= await this.$wf.post("devops?method=/devops/metrics/ms_rpc_current_request_range",parame)
+        let RPC_num= await this.$wf.post("devops?method=/devops/metrics/gw_ms_rpc_current_request_range",parame)
         handleData(RPC_num)
       }
      

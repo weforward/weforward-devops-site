@@ -78,7 +78,9 @@
                   <td>{{item1.version}}</td>
                   <td class="moreinfo">
                     <!-- <span>其他</span> -->
-                    <span v-show="item1.running_id" @click="goToRunning(item1.running_id)">
+					<span v-show="item1.running_id" @click="goToExampleLog(item1)">实例日志</span>
+                    <span v-show="item1.running_id" @click="handleJiankong(item1,index)">jstack&jmap</span>
+					<span v-show="item1.running_id" @click="goToRunning(item1.running_id)">
                       <img src="../../img/caidanicon/shili_sel.png"/>运行实例</span>
                     <span @click="goToFwts(item1)"><img src="../../img/caidanicon/tiaoshi_sel.png" title="网关已到达"/>服务调试</span>
                     <span @click="goToXnzb(item1)"><img src="../../img/caidanicon/xingneng_sel.png" title=""/>性能&指标</span>
@@ -99,6 +101,12 @@
       :selectedNoList="selectedNoList"
       :selectedVersionList="selectedVersionList"></TrafficTableInfo>
       <div v-if="serviceList.length==0" class="table_td" style="text-align:center;"><span>暂无数据</span> </div>
+  <JsJm
+    :isshow="showJsJm"
+    :id="jsjmId"
+    :index="jsjmIndex"
+    :state="jsState"
+    @tapCloser='closeJsJm'></JsJm>
   </div>
 </template>
 
@@ -107,7 +115,8 @@ export default {
   components:{
     PagerBar:()=>import('../../component/PagerBar'),
     RightTableInfo: () => import('../../component/Microservices/RightTableInfo'),
-		TrafficTableInfo: () => import('../../component/Microservices/TrafficTableInfo'),
+	TrafficTableInfo: () => import('../../component/Microservices/TrafficTableInfo'),
+	JsJm:()=>import('../../component/RunningExamle/JsJm')
   },
   data(){
     return{
@@ -124,7 +133,12 @@ export default {
       showTraffic: false,
       selectedServiceName:{},
       selectedNoList:[],
-      selectedVersionList:[]
+      selectedVersionList:[],
+	  //Jstack&Jmap
+	  showJsJm: false,
+	  jsjmId: '',
+	  jsjmIndex: -1,
+	  jsState: -1,
     }
   },
   methods:{
@@ -246,6 +260,23 @@ export default {
         }
       })
       window.open(routeUrl.href, '_blank');
+    },
+	goToExampleLog(item){
+	  let url='/'+this.site_name+'/examplelog?app_log='+(item.name+'_'+item.no);
+	  window.open(url);
+	},handleJiankong(item,index){
+        this.showJsJm=!this.showJsJm;
+        this.jsjmId=item.running_id;
+        this.jsjmIndex=index;
+		var state = -1;
+		if(!(item.timeout||item.unavailable||item.overload)){
+			state = 0;
+		}
+        this.jsState=state;
+        
+      },closeJsJm(index){
+      this.showJsJm=!this.showJsJm;
+      // this.runningList[index].isShowJiankong=false;
     }
   },
   mounted(){
