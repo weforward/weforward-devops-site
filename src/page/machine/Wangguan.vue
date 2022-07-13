@@ -175,7 +175,7 @@ export default{
           }
         })
         msgview.hide(0);
-        this.changeNo(res[0]);
+        //this.changeNo(res[0]);
       }).catch(e=>{
         msgview.hide(0);
         this.$wool.showwarn(e)
