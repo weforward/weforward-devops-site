@@ -3,7 +3,7 @@
 </template>
 
 <script>
-const UEDITORPATH = '//pmpsys.cn/r/js/My97DatePicker/WdatePicker.js';
+const UEDITORPATH = '/js/ext/My97DatePicker/WdatePicker.js';
 import SingletonJsLoader from '../plugins/SingletonJsLoader.js';
 import '../plugins/timeutils.js';
 export default {

@@ -48,7 +48,7 @@ export default {
 		disabled: Boolean
 	},
 	mounted() {
-		singletonJsLoader.load(['//pmpsys.cn/r/js/sortable.min.js'], 'Sortable').then(() => this.sortable());
+		singletonJsLoader.load(['/js/ext/sortable.min.js'], 'Sortable').then(() => this.sortable());
 	},
 	watch: {
 		disabled(val) {
