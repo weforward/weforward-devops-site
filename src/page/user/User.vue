@@ -1,8 +1,8 @@
 <template>
   <div class="zhuti_area">
     <div class="query">
-      关键字：<input type="text" class="keyword_input" @keydown.enter="query" v-model="keyword" placeholder="请输入关键字进行搜索">
-      <div class="query_button" @click="query">查询</div>
+      关键字：<input type="text" class="keyword_input input" @keydown.enter="query" v-model="keyword" placeholder="请输入关键字进行搜索">
+      <el-button type="primary" size="small" class="ml-1" @click="query">查 询</el-button>
     </div>
     <table class="table_area">
       <thead class="table_thead">
@@ -16,8 +16,8 @@
         </tr>
       </tbody>
     </table>
-    <PagerBar v-if="userList.length!=0" :page="page" @change="searchByPage" style="margin-bottom:2%;"></PagerBar>
-    <div v-if="userList.length==0" class="table_td" style="text-align:center;"><span>暂无数据</span> </div>
+    <PagerBar v-if="userList.length!==0" :page="page" @change="searchByPage" style="margin-bottom:2%;"></PagerBar>
+    <div v-if="userList.length===0" class="table_td" style="text-align:center;"><span>暂无数据</span> </div>
   </div>
 </template>
 <script>
@@ -30,10 +30,10 @@ export default {
     return{
       keyword: '',
       userList: [],
-      page: { 
-        current: 1, 
-        pagecount: 1, 
-        totalCount: 0, 
+      page: {
+        current: 1,
+        pagecount: 1,
+        totalCount: 0,
         pagesize: 10,
       },
     }

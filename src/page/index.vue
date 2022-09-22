@@ -5,10 +5,10 @@
         <img src="../img/weforward_logo_white.png" alt="">
       </div>
       <div class="welcomebar">
-        
+
           <div class="usertitle"><span :title="userName">您好，{{userName || '请登录'}}</span></div>
           <img @click="logout" title="安全退出" src=../img/logout.png />
-      
+
       </div>
       <div class="menu_items">
         <div class="menu_item" v-for="(item,index1) in menuData" :key='index1'>
@@ -47,7 +47,8 @@ export default {
           {name:'报警',path:'/'+this.site_name+'/alarm',url: require('../img/caidanicon/baojing.png'),url_sel:require('../img/caidanicon/baojing_sel.png')},
           // {name: '日志',path:'/'+this.site_name+'/report',url: require('../img/caidanicon/rizhi.png'),url_sel:require('../img/caidanicon/rizhi_sel.png')},
           {name: '性能&指标',path: '/'+this.site_name+'/xingnengzhibiao',url: require('../img/caidanicon/xingneng.png'),url_sel:require('../img/caidanicon/xingneng_sel.png')},
-          {name:'调用追踪',path:'/'+this.site_name+'/diaoyongzhuizong',url: require('../img/caidanicon/zhuizong.png'),url_sel:require('../img/caidanicon/zhuizong_sel.png')},
+            {name: '调用分析',path: '/'+this.site_name+'/diaoyongfenxi',url: require('../img/caidanicon/zhuizong.png'),url_sel:require('../img/caidanicon/zhuizong_sel.png')},
+            // {name:'调用追踪',path:'/'+this.site_name+'/diaoyongzhuizong',url: require('../img/caidanicon/zhuizong.png'),url_sel:require('../img/caidanicon/zhuizong_sel.png')},
             {name:'服务调试',path:'/'+this.site_name+'/fuwutiaoshi',url: require('../img/caidanicon/tiaoshi.png'),url_sel:require('../img/caidanicon/tiaoshi_sel.png')}]
         },
         { name: '设备',children:[

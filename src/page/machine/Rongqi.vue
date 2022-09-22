@@ -2,19 +2,15 @@
   <div class="project_area">
     <div class="query">
       <div class="query_input">
-        <input type="text" v-model="page.keywords" @keyup.enter='searchByKeyword'/>
-        <div class="query_button" @click="searchByKeyword">
-          查询
-        </div>
+        <input type="text" v-model="page.keywords" class="input" @keyup.enter='searchByKeyword'/>
+        <el-button type="primary" size="small" class="ml-1" @click="searchByKeyword">查 询</el-button>
       </div>
       <div class="query_group">
         <div class="query_select">
           运维组：<SingleSelect :items="groupName" @select="selectByGroup">
           </SingleSelect>
         </div>
-        <div class="add_button" @click="addMachine">
-          +添加
-        </div>
+        <el-button type="primary" size="small" class="ml-1" @click="addMachine">+ 添 加</el-button>
       </div>
     </div>
     <table class="project_table">
@@ -43,7 +39,7 @@
         <span class="yunweizu" v-if="item.groups.length==0">--</span>
             </td>
           <!-- <td>
-            
+
             </td> -->
             <td style="font-size: 12px;line-height: 18px;">
               <span v-if="item.showloading"><Loading :isshow="item.showloading"></Loading></span>
@@ -96,7 +92,7 @@
       </table>
       <AddMachine ref="addmodel" :obj="editMachineObj" :isshow="showCreate" @toggle="showCreate = !showCreate" @load="getMachineList"></AddMachine>
       <PagerBar v-if="!noData" :page="page" @change="searchByPage" style="margin-bottom:2%;"></PagerBar>
-      
+
   </div>
 </template>
 <script>
@@ -117,10 +113,10 @@ export default {
   },
   data(){
     return{
-      page: { 
-        current: 1, 
-        pagecount: 1, 
-        totalCount: 0, 
+      page: {
+        current: 1,
+        pagecount: 1,
+        totalCount: 0,
         pagesize: 6,
         keywords: ''
       }, //页码初始值
@@ -165,7 +161,7 @@ export default {
         // this.machineList[i].noload=true
         // this.machineList[i].nomeomory=true
         // this.machineList[i].nodist=true
-        
+
       }
       for(let i=0;i<this.machineList.length;i++){
         if(this.machineList[i].name){
@@ -198,9 +194,9 @@ export default {
           //获取开始时间
           let startTime=await this.$wf.post('devops?method=/devops/metrics/agentStartTime',{name:currentName})
           this.machineList[i].starttime=startTime;
-          
-          // console.log(this.machineList[i].starttime) 
-          
+
+          // console.log(this.machineList[i].starttime)
+
 
           //一秒等于一千毫秒,1分钟等于1*60*1000
           let end=new Date(Date.now()-(3*60*1000));
@@ -211,7 +207,7 @@ export default {
             name:currentName,
             interval:15
           }
-          
+
           //获取负载范围
           let loadAverage=await this.$wf.post('devops?method=/devops/metrics/agentLoadAverageRange',parame);
           // 获取负载最大值范围
@@ -221,7 +217,7 @@ export default {
             this.drawCharts(loadAverage,loadMaxAverage,'load',i)
           }else{
             this.machineList[i].noload=true
-          } 
+          }
 
           //获取已用内存范围
           let memoryUsable=await this.$wf.post('devops?method=/devops/metrics/agentMemoryUsedRange',parame);
@@ -232,7 +228,7 @@ export default {
             this.drawCharts(memoryUsable,memoryAllUsable,'memory',i);
           }else{
             this.machineList[i].nomeomory=true
-          } 
+          }
           //获取磁盘已用空间范围
           let distTotal=await this.$wf.post('devops?method=/devops/metrics/agentDistUsedRange',{...parame,path});
           // 获取磁盘总空间范围
@@ -253,7 +249,7 @@ export default {
           this.machineList[i].nomeomory=true;
           this.machineList[i].nodist=true;
         }
-        
+
       }
     },
     drawCharts(data1,data2,op,index){
@@ -334,7 +330,7 @@ export default {
                 fontSize : 10      //更改坐标轴文字大小
               }
             },
-           
+
         },
         series: [{
             data: yData1,
@@ -394,7 +390,7 @@ export default {
     getGroupList(){
       this.$wf.post('devops?method=/devops/home/groups').then(res=>{
         this.groupName=res.items
-      //  console.log(res) 
+      //  console.log(res)
       })
     },
     selectByGroup(id){
@@ -416,7 +412,7 @@ export default {
     this.getGroupList();
     // console.log(echarts)
   },
-  
+
 }
 </script>
 
@@ -460,7 +456,7 @@ background-color: white;
         font-size: 14px;
       }
     }
-    
+
     .query_group{
       width: 80%;
       margin-left: 20px;
@@ -503,7 +499,7 @@ background-color: white;
     .rongqi_td{
       img{
       width:16px;
-      margin:0 2px -4px 0; 
+      margin:0 2px -4px 0;
       }
     .rongqiName{
       font-weight: bold;
@@ -525,14 +521,14 @@ background-color: white;
       }
     }
     }
-    
+
       td{
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
       }
-    
-    
+
+
   }
   .noData{
     text-align: center;

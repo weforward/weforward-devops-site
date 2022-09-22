@@ -2,10 +2,11 @@
   <div class="service_area">
     <div class="query">
       <div class="query_input">
-        <input type="text" placeholder="请输入服务名进行搜索" v-model="page.keywords" @keyup.enter="beforeGetServiceList"/>
-        <div class="query_button" style="margin-left: 5%;" @click="beforeGetServiceList">
-          查询
-        </div>
+        <input type="text" placeholder="请输入服务名进行搜索" class="input" v-model="page.keywords" @keyup.enter="beforeGetServiceList"/>
+<!--        <div class="query_button" style="margin-left: 5%;" @click="">-->
+<!--          查询-->
+<!--        </div>-->
+        <el-button type="primary" size="small" class="ml-1" @click="beforeGetServiceList">查 询</el-button>
       </div>
     </div>
     <div class="tablearea">
@@ -57,7 +58,7 @@
                     <span v-if="null!=item1.domain&&null!=item1.port">http://{{item1.domain}}:{{item1.port}}/{{item1.name}}</span>
                   </td>
                   <td>{{item1.heartbeat.format("yyyy-MM-dd HH:mm") || '--'}}</td>
-                  <td class="msstatus"> 
+                  <td class="msstatus">
                     <span v-if="item1.inaccessible" style="color:red">禁用：</span>
                     <span v-else-if="item1.timeout||item1.unavailable||item1.overload" style="color:red">异常：</span>
                     <span v-else style="color:green">正常：</span>
@@ -73,7 +74,7 @@
                       <img v-if="item1.overload" src="../../img/msicon/guozai.png" title="实例过载" />
                       <!-- <img v-else src="../../img/msicon/guozai.png" title="实例负载正常"/> -->
                     </span>
-                    
+
                   </td>
                   <td>{{item1.version}}</td>
                   <td class="moreinfo">
@@ -94,9 +95,9 @@
     </div>
     <PagerBar v-if="serviceList.length!=0" :page="page" @change="searchByPage"></PagerBar>
 		<RightTableInfo ref="rightinfo" @toggle="handleRight" :servicename="selectedname" :isshow="showRight"></RightTableInfo>
-		<TrafficTableInfo ref="trafficinfo" 
-      :isshow="showTraffic" 
-      @toggle="showTraffic = false" 
+		<TrafficTableInfo ref="trafficinfo"
+      :isshow="showTraffic"
+      @toggle="showTraffic = false"
       :service="selectedServiceName"
       :selectedNoList="selectedNoList"
       :selectedVersionList="selectedVersionList"></TrafficTableInfo>
@@ -120,10 +121,10 @@ export default {
   },
   data(){
     return{
-      page: { 
-        current: 1, 
-        pagecount: 1, 
-        totalCount: 0, 
+      page: {
+        current: 1,
+        pagecount: 1,
+        totalCount: 0,
         pagesize: 10,
         keywords: ''
       }, //页码初始值
@@ -273,7 +274,7 @@ export default {
 			state = 0;
 		}
         this.jsState=state;
-        
+
       },closeJsJm(index){
       this.showJsJm=!this.showJsJm;
       // this.runningList[index].isShowJiankong=false;
@@ -312,7 +313,7 @@ export default {
         border-radius: 3px;
         padding-left: 10px;
       }
-    
+
     }
   }
   .project_table{
@@ -385,7 +386,7 @@ export default {
               img{
                 width:20px;
                 margin-bottom: -5px;
-                margin-right: 5px; 
+                margin-right: 5px;
               }
           }
         }
@@ -407,7 +408,7 @@ export default {
     // color:#7F7F7F;
     // border: 2px dotted #008974;
     }
-    } 
+    }
     tbody{
       border-bottom:1px solid rgba(0,123,255,.4);
       table{

@@ -84,6 +84,8 @@ export default {
 }
 .radio-arr {
 	margin: 20px 0  20px 20px;
+  height: 40vh;
+  overflow-y: auto;
 	/* margin-bottom: 20px; */
 }
 .radio-item {

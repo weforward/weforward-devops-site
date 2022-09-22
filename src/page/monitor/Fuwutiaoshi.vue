@@ -13,8 +13,8 @@
 					<div class="input-box-title">脚本名(与脚本源码二选一)：</div>
 					<div class="input-box-content">
             <input v-model="scriptName" style="width:180px" class="inputtext" placeholder="如:_VersionScript,_LogScript" />
-            <div class="query_button" @click="quickDebug('vs')">Version</div>
-            <div class="query_button" @click="quickDebug('ls')">Log</div>
+            <el-button type="primary" size="small" class="ml-1" @click="quickDebug('vs')">Version</el-button>
+            <el-button type="primary" size="small" class="ml-1" @click="quickDebug('ls')">Log</el-button>
           </div>
 				</div>
 				<div class="input-box flexlayout">
@@ -43,7 +43,7 @@
 	export default {
 		name: 'debug',
 		components: {
-      SingleSelect: ()=> import('../../component/SingleSelect')      
+      SingleSelect: ()=> import('../../component/SingleSelect')
 		},
 		data() {
 			return {
@@ -144,7 +144,7 @@
         this.debug();
       }
     },
-  
+
 		mounted() {
       this.getServiceList();
       if(this.$route.query !=null){
@@ -198,7 +198,7 @@
 		color: red;
 		width:450px;
 	}
-	
+
 	.inputtext{
 		border: 1px solid #AFABAB;
 		border-radius: 3px;

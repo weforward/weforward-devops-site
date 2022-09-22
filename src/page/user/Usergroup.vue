@@ -2,19 +2,15 @@
   <div class="project_area">
     <div class="query">
       <div class="query_input">
-        <input type="text" v-model="page.keywords" @keyup.enter='getGroupList'/>
-        <div class="query_button" @click="getGroupList">
-          查询
-        </div>
+        <input type="text" v-model="page.keywords" class="input" @keyup.enter='getGroupList'/>
+        <el-button type="primary" size="small" class="ml-1" @click="getGroupList">查 询</el-button>
       </div>
       <div class="query_group">
         <div class="query_select">
           运维组：<SingleSelect :items="groupName" @select="selectByGroup">
           </SingleSelect>
         </div>
-        <div class="add_button" @click="showAddGroup=true">
-          +添加
-        </div>
+        <el-button type="primary" size="small" class="ml-1" @click="showAddGroup=true">+ 添 加</el-button>
       </div>
     </div>
     <table class="project_table">
@@ -40,7 +36,7 @@
               </span>
               <span v-if="item.users.length == 0">--</span>
             </td>
-         
+
             <td class="caozuo_td">
               <span v-if="item.users.length != 0" style="margin-right: 10px;" @click="operateUser('remove',item)">移除用户</span>
               <span @click="operateUser('add',item)">添加用户</span>
@@ -69,10 +65,10 @@
 export default {
   data(){
     return{
-			page: { 
-        current: 1, 
-        pagecount: 1, 
-        totalCount: 0, 
+			page: {
+        current: 1,
+        pagecount: 1,
+        totalCount: 0,
         pagesize: 10,
         keywords: ''
       }, //页码初始值
@@ -119,7 +115,7 @@ export default {
     getSelectGroupList(){
       this.$wf.post('devops?method=/devops/home/groups').then(res=>{
         this.groupName=res.items
-      //  console.log(res) 
+      //  console.log(res)
       })
     },
     selectByGroup(id){
@@ -226,7 +222,7 @@ export default {
         font-size: 14px;
       }
     }
-    
+
     .query_group{
       width: 80%;
       margin-left: 20px;
@@ -277,10 +273,10 @@ export default {
           color: #3D83E5;
           cursor: pointer;
         }
-        
+
       }
     }
-    
+
   }
   .noData{
     text-align: center;
