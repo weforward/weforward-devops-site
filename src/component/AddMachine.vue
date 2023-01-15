@@ -106,6 +106,41 @@
         </table>
 				<div class="addrowBar" @click="addRowCount('envs')">+</div>
         <!-- <div class="input-box"><button class="add-row btn" @click="addRowCount('envs')">加一列</button></div> -->
+		<div class="input-box"><label>项目映射示例</label></div>
+		<table  class="table tableDatil">
+		  <thead>
+		    <th>属性名</th>
+		    <th>属性示例值</th>
+		    <th>说明</th>
+		  </thead>
+		  <tbody>
+			  <tr>
+				<td>/data/</td>
+				<td>/data/</td>
+				<td>将宿主机的/data/目录挂载到容器相关项目的/data/目录</td>
+			  </tr>
+		  </tbody>
+		</table>
+		<div class="input-box"><label>环境变量示例</label></div>
+		<table  class="table tableDatil">
+		  <thead>
+		    <th>属性名</th>
+		    <th>属性示例值</th>
+		    <th>说明</th>
+		  </thead>
+		  <tbody>
+			  <tr>
+				<td>SERVER_ID</td>
+				<td>x0001</td>
+				<td>容器相关项目的服务器id</td>
+			  </tr>
+			  <tr>
+				  <td>RLOG_URL</td>
+				  <td>http://127.0.0.1:1200/log.j</td>
+				  <td>远程日志的链接</td>
+			  </tr>
+		  </tbody>
+		</table>
         <div class="btn-box">
           
           <button class="add-btn" @click="AddMachine">

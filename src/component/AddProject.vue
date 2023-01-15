@@ -111,7 +111,72 @@
         </table>
         <div class="addrowBar" v-if="operate != 'detail'" @click="addRowCount('envs')">+</div>
         <!-- <div class="input-box" v-if="operate != 'detail'"><button class="add-row btn" @click="addRowCount('envs')">加一列</button></div> -->
-        <div class="btn-box" v-if="operate != 'detail'">
+		<div class="input-box"><label>项目映射示例</label></div>
+		<table  class="table tableDatil">
+		  <thead>
+		    <th>属性名</th>
+		    <th>属性示例值</th>
+		    <th>说明</th>
+		  </thead>
+		  <tbody>
+			  <tr>
+				<td>/wf/html/</td>
+				<td>/home/boot/html/</td>
+				<td>将宿主机的/wf/html目录挂载到项目的/home/boot/html/目录</td>
+			  </tr>
+		  </tbody>
+		</table>
+        <div class="input-box"><label>环境变量示例</label></div>
+        <table  class="table tableDatil">
+          <thead>
+            <th>属性名</th>
+            <th>属性示例值</th>
+            <th>说明</th>
+          </thead>
+          <tbody>
+			  <tr>
+				<td>Xms</td>
+				<td>128m</td>
+				<td>指定jvm启动时分配的内存</td>
+			  </tr>
+			  <tr>
+			  	<td>Xmx</td>
+			  	<td>256m</td>
+			  	<td>指定jvm运行过程中分配的最大内存</td>
+			  </tr>
+			  <tr>
+			  	<td>Xss</td>
+			  	<td>256k</td>
+			  	<td>指定jvm启动的每个线程分配的内存大小</td>
+			  </tr>
+			  <tr>
+				<td>maxDirectMemorySize</td>
+				<td>64m</td>
+				<td>指定jvm的DirectMemory最大值</td>
+			  </tr>
+			  <tr>
+			  	<td>disabelG1GC</td>
+			  	<td>false</td>
+			  	<td>是否禁用G1GC,true为禁用,false为不禁用</td>
+			  </tr>
+			  <tr>
+				  <td>RLOG_URL</td>
+				  <td>http://127.0.0.1:1200/log.j</td>
+				  <td>远程日志的链接</td>
+			  </tr>
+			  <tr>
+				 <td>WEFORWARD_HOSTS</td>
+				 <td>//weforawrd.wf</td>
+				 <td>Weforward主机域名</td>
+			  </tr>
+			  <tr>
+				  <td>WF_JAVA_OPTIONS</td>
+				  <td></td>
+				  <td>自定义的java程序启动参数</td>
+			  </tr>
+          </tbody>
+        </table>
+		<div class="btn-box" v-if="operate != 'detail'">
           <!-- <button v-if="editObj.can_delete" class="add-btn" @click="deleteProject">
             <span>删除</span>
           </button> -->
