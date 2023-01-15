@@ -42,7 +42,7 @@ VUE_APP_WF_HOST_PRODUCT=
 #本地环境域名
 VUE_APP_WF_HOST_TEST=
 #本机开发环境域名
-VUE_APP_WF_HOST_DEV=//lhoninyun.navboy.com
+VUE_APP_WF_HOST_DEV=//wf.weforward.xyz
 
 
 #本开发环境默认端口
